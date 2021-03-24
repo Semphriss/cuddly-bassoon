@@ -40,7 +40,7 @@ jobs:
           # Clickable requires a reboot/logout. This is a sneaky way to bypass that :^)
           sudo systemctl unmask docker.service
           sudo systemctl start docker.service
-          export PATH=$PATH:/home/runner/.local/bin
+          export PATH=$PATH:~/.local/bin/
       - name: Build
         env:
           BUILD_TYPE: ${{ (matrix.build == 'Debug') && '--debug' || '' }}
