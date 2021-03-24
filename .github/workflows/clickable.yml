@@ -45,7 +45,7 @@ jobs:
         env:
           BUILD_TYPE: ${{ (matrix.build == 'Debug') && '--debug' || '' }}
           ARCH: ${{ matrix.arch }}
-        run: clickable build --verbose ${BUILD_TYPE} --arch ${ARCH} --config clickable.json
+        run:  ~/.local/bin/clickable build --verbose ${BUILD_TYPE} --arch ${ARCH} --config clickable.json
       - uses: actions/upload-artifact@v2
         with:
           name: "ubports-${{ matrix.arch }}--click"
